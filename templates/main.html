@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Dongri</title>
+  <style>
+    body{
+      background-image: url("../static/sorce/bg1.png");
+      background-repeat:no-repeat;
+      background-size: cover;    
+    }
+    .page1_btn {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      position:absolute;
+    }
+    #btn_donghwa {
+      left: 130px;
+      top: 480px;
+    }
+    #btn_illgi {
+      right: 130px;
+      top: 480px;
+    }
+  </style>
+</head>
+<body background="../static/sorce/bg1.png">
+  <script>
+    // 버튼 마우스 올렸을 때
+    function donghwa_press() {
+      document.getElementById("img_donghwa").src = "../static/sorce/donghwa_btn_after.png"
+    }
+    function illgi_press() {
+      document.getElementById("img_illgi").src = "../static/sorce/illgi_btn_after.png"
+    }
+    // 버튼 마우스 땠을 때
+    function donghwa_unpress() {
+      document.getElementById("img_donghwa").src = "../static/sorce/donghwa_btn_before.png"
+    }
+    function illgi_unpress() {
+      document.getElementById("img_illgi").src = "../static/sorce/illgi_btn_before.png"
+    }
+  </script>
+  
+  <button type="button" class="page1_btn" id="btn_donghwa" onclick="window.location.href='/fairytail'">
+    <img id="img_donghwa" src="../static/sorce/donghwa_btn_before.png" onmouseover="donghwa_press()" onmouseout="donghwa_unpress()">
+  </button>
+  <button type="button" class="page1_btn" id="btn_illgi" onclick="window.location.href='/diary'">
+    <img id="img_illgi" src="../static/sorce/illgi_btn_before.png" onmouseover="illgi_press()" onmouseout="illgi_unpress()">
+  </button>
+</body>
+</html>
+
+
+    

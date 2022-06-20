@@ -1,0 +1,26 @@
+body { font-family: sans-serif; }
+
+.container {
+  position:absolute;
+  padding: 10px;
+  width: 1000px;
+  height: 1000px;
+  margin-top: 230px;
+  margin-left: 400px;
+}
+
+.draggable {
+  width: 140px;
+  /* height: 140px; */
+  /* background: #F90; */
+  /* border-radius: 10px; */
+  /* margin: 0 10px 10px 0; */
+  /* float: left;  */
+}
+
+.draggable.is-pointer-down {
+  background: #09F;
+  z-index: 2; /* above other draggies */
+}
+
+.draggable.is-dragging { opacity: 0.7; }

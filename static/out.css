@@ -1,0 +1,92 @@
+@import "reset.css";
+body {
+    background-image: url("data/img/bg3.png");
+    background-repeat:no-repeat;
+    background-size: auto;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-position: 50% 0%;
+}
+
+#page_bg {
+    background-color: white;
+    width: 1000px;
+    height: 950px;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+
+/* 날짜/날씨 */
+#date_area {
+    /* border: 1px solid; */
+    position: absolute;
+    width: 880px;
+    height: 50px;
+    margin-top: 40px;    
+    margin-left: 60px;
+}
+#date_text {
+    /* padding-top: 10px; */
+    padding-left: 20px;
+    font-family: 'Dongle', sans-serif;
+    font-size: xxx-large;
+}
+#weather_area {
+    padding-left: 100px;
+}
+.weather_img {
+    height: 50px;
+    margin-left: 20px;
+    z-index: 1;
+}
+.check_img {
+    height: 40px;
+    z-index: 2;
+    padding-top: 0px;
+}
+
+/* 그림 */
+#picture_area {
+    border: 3px solid;
+    border-radius: 5px;
+    position: absolute;
+    width: 880px;
+    height: 450px;
+    margin-top: 130px;
+    margin-left: 60px;
+}
+.picture_img {
+    position: absolute; 
+    width: 860px;
+    height: 340px;
+    margin-top: 100px;
+}
+.sticker_img {
+    height: 100px;
+}
+
+.draggable {
+    /* width: 140px; */
+    /* height: 100px; */
+    /* background: #F90; */
+    /* border-radius: 10px; */
+    /* margin: 0 10px 10px 0; */
+    /* float: left;  */
+}
+.draggable.is-pointer-down {
+    background: #09F;
+    z-index: 2; /* above other draggies */
+}
+.draggable.is-dragging { opacity: 0.7; }
+
+/* 글 */
+.text_area {
+    position: absolute;
+    margin-top: 630px;
+    margin-left: 60px;
+}
+.text {
+    margin-bottom: 30px;
+    border-bottom: 3px solid;
+    width: 880px;
+    font-family: 'Poor Story', cursive;
+}

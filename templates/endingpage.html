@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/fairystyles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+    <style>*{font-family: 'Gamja Flower', cursive;}</style>
+    <title>BadEnding</title>
+    <audio autoplay id='audio_play' src={{endsound}} audio></audio>
+</head>
+<body>
+  <div id = "fairy_main"> 
+      <div class = "img-center">
+          <center><img src = {{first_img}} id = "photo" width="800"></center>
+      </div>
+      <div class="story-center">
+          <center><h1 id ="story">
+            {{first_sto}}
+          </h1></center>
+      </div>
+      <div>
+        <p><button class="return_tem" onclick="window.location.href='/fairytail'">처음으로</button></p>
+        <p><button class="return_first" onclick="window.location.href='/fairytail/adventure'">다시하기</button></p>
+      </div>
+  </div>       
+</body>
+</html>

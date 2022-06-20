@@ -1,0 +1,196 @@
+@import "reset.css";
+body {
+    background-image: url("../static/sorce/bg1.png");
+    background-repeat:no-repeat;
+    background-size: cover;
+    font-size: 38px;
+    font-family: 'Gamja Flower', cursive;
+}
+
+
+/* fairytale.html 디자인 */
+#fairy_main{
+    position:absolute;
+    top: 50%; left:50%;
+    transform: translate(-50%, -50%);
+    width: 1200px;
+    height: 700px;
+    background-color: rgb(247, 227, 206);
+    border-radius: 25px;
+}
+.img-center{
+    position:absolute;
+    top: 38%; left:50%;
+    transform: translate(-50%, -50%);
+    width: 1100px;
+    height: 450px;
+    /* background-color: rgb(255, 252, 243); */
+    border-radius: 25px;
+}
+.story-center{
+    position:absolute;
+    top: 85%; left:50%;
+    transform: translate(-50%, -50%);
+    width: 1100px;
+    height: 160px;
+    background-color: rgb(241, 255, 234);
+    border-radius: 25px;
+}
+#buttoncon{
+    position:absolute;
+    top: 90%; left:90%;
+    transform: translate(-50%, -50%);
+}
+#buttoncon #button{
+    background-color: #f7adff;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    width: auto;
+    border-radius : 25px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 22px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+#buttoncon #start_quiz{
+    background-color: #f7adff;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    width: auto;
+    border-radius : 25px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 22px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+#endbutton{
+    position:absolute;
+    top: 50%; left:50%;
+    transform: translate(-50%, -50%);
+}
+#endbutton .fin_them{
+    background-color: #9be184;
+    border: none;
+    color: white;
+    padding: 20px 35px;
+    text-align: center;
+    width: auto;
+    border-radius : 5px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+#endbutton .fin_button{
+    background-color: #9be184;
+    border: none;
+    color: white;
+    padding: 20px 35px;
+    text-align: center;
+    width: auto;
+    border-radius : 5px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.canvas{
+    position:absolute;
+    top: 38%; left:50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 350px;
+    border-radius: 20px;
+}
+#controls_btns1{
+    position:absolute;
+    top: 60%; left:50%;
+    transform: translate(-50%, -50%);
+}
+#controls_btns2{
+    position:absolute;
+    top: 60%; left:50%;
+    transform: translate(-50%, -50%);
+}
+/* quiz.html 디자인 */
+.hero_img{
+    position:absolute;
+    top: 60%; left:10%;
+    transform: translate(-50%, -50%);
+}
+.mawang_img{
+    position:absolute;
+    top: 60%; left:90%;
+    transform: translate(-50%, -50%);
+}
+.heart_img{
+    position:absolute;
+    top: 24%; left:10%;
+    transform: translate(-50%, -50%);
+}
+.heart_img2{
+    position:absolute;
+    top: 24%; left:90%;
+    transform: translate(-50%, -50%);
+}
+/* fairytale.html 디자인 */
+#story{
+    position:absolute;
+    top: 50%; left:50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+}
+
+
+#soundbox{
+    position:absolute;
+    top: 15%; left:100%;
+    transform: translate(-15%, -85%);
+    width: 800px;
+}
+.return_tem{
+    position:absolute;
+    top: 50%; left:40%;
+    transform: translate(-50%, -50%);
+
+    background-color: #f7adff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    border-radius : 15px;
+    font-size: 30px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.return_first{
+    position:absolute;
+    top: 50%; left:60%;
+    transform: translate(-50%, -50%);
+
+    background-color: #f7adff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    border-radius : 15px;
+    font-size: 30px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.alert{
+    position:absolute;
+    top: 17%; left:50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    color: rgb(249, 57, 64);
+}

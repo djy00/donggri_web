@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/fairystyles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+    <style>*{font-family: 'Gamja Flower', cursive;}</style>
+    <title>Quiz</title>
+    <audio autoplay id='audio_play' src='../static/story_data/story_ost/8.mp3' audio></audio>
+</head>
+
+<body>
+    <div id = "fairy_main">
+        <div class = "img-center">
+            <center><img src = "../static/story_data/story_img/9.png" id = "photo" width="800"></center>
+        </div>
+        <div class="story-center">
+            <center> <h1 id ="story"> {{quiz_list}}</h1> </center>
+        </div>
+        <div class="hero_img">
+            <img src="../static/story_data/story_img/용사.png" width="200">
+        </div>
+        <div class="mawang_img">
+            <img src="../static/story_data/story_img/마왕.png" width="200">
+        </div>
+        <div class="heart_img">
+            {% if h_heart ==1 %}
+                <br>
+                <br>
+                <p><img src="../static/story_data/story_img/하트.png"  width="100"></p>
+            {% elif h_heart ==2%}
+                <br>
+                <p><img src="../static/story_data/story_img/하트.png"  width="100"></p>
+                <p><img src="../static/story_data/story_img/하트.png"  width="100"></p>
+            {% elif h_heart ==3%}
+                <p><img src="../static/story_data/story_img/하트.png"  width="100"></p>
+                <p><img src="../static/story_data/story_img/하트.png"  width="100"></p>
+                <p><img src="../static/story_data/story_img/하트.png"  width="100"></p>
+            {% endif %}
+        </div>
+        <div class="heart_img2">
+            {% if d_heart ==1 %}
+                <br>
+                <br>
+                <p><img src="../static/story_data/story_img/하트.png"  width="100"></p>
+            {% elif d_heart ==2%}
+                <br>
+                <p><img src="../static/story_data/story_img/하트.png"  width="100"></p>
+                <p><img src="../static/story_data/story_img/하트.png"  width="100"></p>
+            {% elif d_heart ==3%}
+                <p><img src="../static/story_data/story_img/하트.png"  width="100"></p>
+                <p><img src="../static/story_data/story_img/하트.png"  width="100"></p>
+                <p><img src="../static/story_data/story_img/하트.png"  width="100"></p>
+            {% endif %}
+        </div>
+        <canvas id="jsCanvas" class="canvas"></canvas>
+        <div id="controls" >
+                <div id="controls_btns1">
+                    <button id = 'jsMode'>지우기</button>
+                    <form action=" " method="POST">
+                        <button id = 'jsSave'>완료</button>
+                    </form> 
+                    <!-- <button id = 'jsSave' onclick="window.location.href=''" >완료</button> -->
+                </div>
+        </div>
+        <script src="../static/fairyapp.js"></script>
+    </div>       
+</body>
+</html>

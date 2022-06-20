@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/fairystyles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+    <style>*{font-family: 'Gamja Flower', cursive;}</style>
+
+    <title>HappyEnding</title>
+
+    <script>
+        var num = 0
+        var numlist =  {{storyset|tojson}};
+        var filelist = {{storyli|tojson}};
+
+        function changePic(idx) { 
+          if (idx) {
+            if (num==9){
+              document.getElementById("endbutton").style.display = "block";
+              return;
+            } 
+            num++; 
+          } else {
+            if (num == 0) return; 
+            num--; 
+          }
+          var imgTag = document.getElementById("photo");
+          var file_url = "../static/story_data/story_img/"+ numlist[num] + ".png" ;
+          imgTag.setAttribute("src", file_url ); 
+          document.getElementById("story").textContent= filelist[num];     
+
+          var SoundTag = document.getElementById("audio_play");
+          var sound_url = "../static/story_data/story_sound/output"+ numlist[num] + ".mp3" ;
+          SoundTag.setAttribute("src", sound_url ); 
+        }
+      </script> 
+
+      <script type="text/javascript"> 
+      function play() { 
+          var audio = document.getElementById('audio_play'); 
+          if (audio.paused) { 
+              audio.play();
+          }else{ 
+              audio.pause();
+              audio.currentTime = 0 
+          } 
+      } 
+       </script>
+</head>
+
+<body>
+  <audio id='audio_play' src='../static/story_data/story_sound/output1.mp3'></audio>
+  <div id = "fairy_main"> 
+      <div class = "img-center">
+          <center><img src = "../static/story_data/story_img/1.png" id = "photo" width="800"></center>
+      </div>
+      <div id = "soundbox">
+        <img onclick="play()" src="../static/sorce/spicker.png" width="75px">
+      </div>
+      <div class="story-center">
+          <center><h1 id ="story">
+            옛날 옛적 어느 평화로운 왕국이 있었어요.
+          </h1></center>
+      </div>
+      <div id="buttoncon">
+        <p>
+          <button id="button" onclick="changePic(0);">이전</button>   
+          <button id="button" onclick="changePic(1);">다음</button>
+        </p>
+      </div>
+      <div id="endbutton" style = "display:none">
+        <p><button class="fin_them" onclick="window.location.href='/fairytail'" >처음으로</button></p>
+      </div>
+  </div>       
+</body>
+</html>

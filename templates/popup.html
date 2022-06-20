@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/fairystyles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+    <style>*{font-family: 'Gamja Flower', cursive;}</style>
+    <title>POPUP</title>
+
+</head>
+<body>
+    <div id = "fairy_main">
+        <div class = "img-center">
+            <center><img src = {{first_img}} id = "photo" width="800"></center>
+            <!-- <center><img src = '../static/story_img/1.png' id = "photo" width="800"> -->
+        </div>
+        <div class="story-center">
+            <center> <h1 id ="story"> {{first_sto}} </h1> </center>
+        </div>
+        <canvas id="jsCanvas" class="canvas"></canvas>
+        <div id="controls" >
+            {% if _idx ==1 %}
+                <div id="controls_btns1">
+                    <button id = 'jsMode'>지우기</button>
+                    <button id = 'jsSave' onclick="window.location.href='/fairytail/shoes'" >완료</button>
+                </div>
+            {% elif _idx ==2%}
+                <div id="controls_btns2" >
+                    <button id = 'jsMode'>지우기</button>
+                    <button id = 'jsSave' onclick="window.location.href='/fairytail/person'" >완료</button>
+                </div>
+            {% endif %}
+        </div>
+        <h1 class = "alert">글자를 다시 한번 또박또박 입력해주세요!</h1>
+        <script src="../static/fairyapp.js"></script>
+    </div>       
+</body>
+</html>

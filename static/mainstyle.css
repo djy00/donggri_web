@@ -1,0 +1,31 @@
+body {
+    background-image: url("C:\\cakd5\\donggri_web\\dinor.png");
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+
+.logo{
+    position:absolute;
+    top:40%; left:50%;
+    transform: translate(-50%, -50%);
+}
+.start_button{
+    position:absolute;
+    top:70%; left:50%;
+    transform: translate(-50%, -50%);
+    
+}
+.butt{
+    background-color: #60dc6e;
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+    width: auto;
+    border-radius : 5px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 22px;
+    margin: 4px 2px;
+    cursor: pointer;
+}

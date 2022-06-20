@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/fairystyles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+    <style>*{font-family: 'Gamja Flower', cursive;}</style>
+
+    <title>Fairytail</title>
+    <!-- 버튼 동작 -->
+    <script>
+      var num = {{page}};
+      var numlist =  {{storyset|tojson}};
+      var filelist = {{storyli|tojson}};
+
+      function changePic(idx) { 
+        if (idx) {
+          if (num==9){
+            document.getElementById("endbutton").style.display = "block";
+            return;
+          }  //num이 maxnum일때 num++ 이전에 강제종료 
+          num++; 
+        } else {
+          if (num == 0) return; //num이 0일때 num-- 이전에 강제종료
+          num--; 
+        }
+        //다음 버튼을 누를때마다 바껴야하는것
+        //이미지
+        var imgTag = document.getElementById("photo");
+        var file_url = "../static/story_data/story_img/"+ numlist[num] + ".png" ;
+        imgTag.setAttribute("src", file_url );
+        //스토리
+        document.getElementById("story").textContent= filelist[num];
+        //브금
+        var SoundTag = document.getElementById("audio_play");
+        var sound_url = "../static/story_data/story_ost/"+ numlist[num] + ".mp3" ;
+        SoundTag.setAttribute("src", sound_url );
+
+        //특정 페이지마다 동작변경
+        //문제풀이 전 페이지
+        if(num == 7){ 
+          document.getElementById("button").style.display = "none";
+          document.getElementById("start_quiz").style.display = "block";
+        }
+        //분기점 페이지
+        if(num ==2 || num==4){
+          document.getElementById("jsCanvas").style.display = "block";
+          document.getElementById("button").style.display = "none";
+          if(num ==2){
+            document.getElementById("controls_btns1").style.display = "block";
+          }if(num == 4){
+            document.getElementById("controls_btns2").style.display = "block";
+          }
+        }else{
+          document.getElementById("jsCanvas").style.display = "none";
+          document.getElementById("controls_btns1").style.display = "none";
+          document.getElementById("controls_btns2").style.display = "none";
+          document.getElementById("button").style.display = "block";
+        }
+      }
+    </script>
+    <audio autoplay id='audio_play' src={{first_sound}} audio></audio>
+</head>
+
+<body>
+  <div id = "fairy_main"> 
+      <div class = "img-center">
+          <center><img src = {{first_img}} id = "photo" width="800"></center>
+      </div>
+      <div class="story-center">
+          <center>
+            <h1 id ="story"> {{first_sto}} </h1>
+          </center>
+      </div>
+      <!-- 페이지 이동 버튼 -->
+      <div id="buttoncon">
+          <!-- <button id="button" onclick="changePic(0);" style = "display:block">이전</button> -->
+          <button id="button" onclick="changePic(1);" style = "display:block">다음</button>
+      </div>
+      <!-- 낱말퀴즈 페이지 이동 버튼 -->
+      <div id="buttoncon">
+          <button id="start_quiz" onclick="window.location.href='/fairytail/quiz'" style = "display:none">다음</button>
+      </div>
+      <!-- 엔딩페이지 버튼 -->
+      <div id="endbutton" style = "display:none">
+        <p><button class="fin_them" onclick="window.location.href='/'" >처음으로</button></p>
+        <p><button class="fin_button" onclick="window.location.href='/fairytail/ending'">동화보기</button></p>
+      </div>
+      <!-- 손글씨 그림판 출력 -->
+      <canvas id="jsCanvas" class="canvas" style = "display:none"></canvas>
+      <!-- 손글씨 그림판 버튼 -->
+      <div id="controls" >
+          <div id="controls_btns1" style = "display:none">
+              <button id = 'jsMode'>지우기</button>
+              <button id = 'jsSave' onclick="window.location.href='/fairytail/shoes'" >완료</button>
+          </div>
+          <div id="controls_btns2" style = "display:none">
+            <button id = 'jsMode2'>지우기</button>
+            <button id = 'jsSave2' onclick="window.location.href='/fairytail/person'" >완료</button>
+          </div>
+      </div>
+
+      
+      <script src="../static/fairyapp.js"></script>
+  </div>       
+</body>
+</html>
